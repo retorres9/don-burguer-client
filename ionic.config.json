@@ -1,0 +1,7 @@
+{
+  "name": "donBurguerClient",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
