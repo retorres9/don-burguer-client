@@ -1,0 +1,25 @@
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-title>Iniciar sesión</ion-title>
+    </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+    <ion-img width="100%" src="assets/donburguer.jpg" alt=""></ion-img>
+    <h2 class="ion-text-center">Iniciar sesión</h2>
+    <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input type="mail" placeholder="Ingrese su correo"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" placeholder="Ingrese su contraseña"></ion-input>
+    </ion-item>
+    <ion-button class="button-margin-top" expand="block" shape="round" color="primary">
+        Click me
+    </ion-button>
+    <ion-button class="g-button" expand="block" shape="round" color="success" (click)="login()">Login with Google</ion-button>
+    <div class="ion-text-center button-margin-top">
+        <small>Desarrollado por <a href="#">Umayi</a></small>
+    </div>
+</ion-content>

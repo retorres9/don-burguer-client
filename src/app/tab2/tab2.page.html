@@ -1,17 +1,45 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar mode="ios">
+        <ion-buttons slot="start">
+            <ion-button>
+                <ion-icon name="apps-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>
+            Bienvenido
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon name="cart-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title class="ion-text-left" *ngIf="username">Bienvenido {{username}}</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-searchbar mode="ios" animated="true" debounce="500" (ionChange)="searchProduct($event)"></ion-searchbar>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-list *ngFor="let product of products">
+        <ion-item>
+            <ion-avatar [routerLink]="['/tabs/viewProduct', product.id]" slot="start">
+                <img [src]="product.img" alt="">
+            </ion-avatar>
+            <ion-label>
+                <h2>{{product.name | titlecase}}</h2>
+                <h4>{{product.description}}</h4>
+                <p>Precio: {{product.price | currency}}</p>
+            </ion-label>
+            <ion-button (click)="addCart(product.id)">
+                <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+            </ion-button>
+        </ion-item>
+    </ion-list>
+
+
+
 </ion-content>
